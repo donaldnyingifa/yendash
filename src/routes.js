@@ -21,10 +21,10 @@ const Routes = (props) => {
         <Route  exact component={SignIn} path="/signin"/>
         <Route  exact component={Register} path="/register"/>
         <Header>
-        <Route exact component={Admin} path="/admin" />
+        <Route exact component={dashboard} path="/new/schools" />
         <Route exact component={registeredSchool} path="/schools" />
         <Route exact component={schoolData} path="/schools/data"/>
-        <Route exact component={dashboard} path="/dashboard" />
+        <Route exact component={Admin} path="/dashboard" />
         <Route exact component={student} path='/student' />
         <Route exact component={Profile} path='/profile'/>
         </Header>
