@@ -2,15 +2,35 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import { Link } from 'react-router-dom'
-import { FaUserCircle } from 'react-icons/fa'
+import { auth } from '../../firebase'
 
 class Header extends Component {
+    logout = () => {
+        auth.signOut().then(() => {
+            window.location.href="/signin";
+        });
+    }
+    componentDidMount () {
+        this.unsubscribe = auth.onAuthStateChanged((user)=> {
+            if (!user){
+                window.location.href="/signin";
+            }else{
+                this.setState({ email: user.email });
+            }
+        });
+    }
+
+    componentWillUnmount () {
+        this.unsubscribe();
+    }
     render() {
         return (
             <div>
                 <Container className="mt-3">
                     <div className='d-flex justify-content-around'>
-                        <h1>Yendash</h1>
+                        <Link to="/dashboard">
+                             <h1>Yendash</h1>
+                        </Link>
                         <Form className='mt-2 form-input' >
                             <Form.Group>
                                 <Form.Control type='text' className='form-input' placeholder='Search' />
@@ -18,11 +38,11 @@ class Header extends Component {
                         </Form>
 
                         <Link to='/schools' className='mt-3'>Schools Registered</Link>
-                        <Link to='/' className='mt-3'>Schools in Bayelsa</Link>
+                        <Link to='/new/schools' className='mt-3'>New Schools</Link>
 
-                        <Link to='/profile'>
-                        <FaUserCircle className='mt-2 user-icon' />
-                        </Link>
+                        <a href="#" className='mt-3' onClick={this.logout}>
+                            Log Out
+                        </a>
                     </div>
                 </Container>
             {this.props.children}
