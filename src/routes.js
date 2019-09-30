@@ -6,6 +6,7 @@ import Header from './Components/Header/Header'
 import registeredSchool from './Components/adminDashboard/registeredSchool';
 import dashboard from './Components/userDashboard/dashboard'
 import student from './Components/userDashboard/Student'
+import Profile from './Components/Profile/Profile'
 
 const Routes = (props) => {
   return (
@@ -17,6 +18,7 @@ const Routes = (props) => {
         <Route exact component={registeredSchool} path="/schools" />
         <Route exact component={dashboard} path="/dashboard" />
         <Route exact component={student} path='/student' />
+        <Route exact component={Profile} path='/profile'/>
       </Switch>
     </Router>
 
