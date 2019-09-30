@@ -10,7 +10,7 @@ class Header extends Component {
             <div>
                 <Container className="mt-3">
                     <div className='d-flex justify-content-around'>
-                        <h1>Yendash</h1>
+                        <h1>Schema</h1>
                         <Form className='mt-2 form-input' >
                             <Form.Group>
                                 <Form.Control type='text' className='form-input' placeholder='Search' />
@@ -18,7 +18,7 @@ class Header extends Component {
                         </Form>
 
                         <Link to='/schools' className='mt-3'>Schools Registered</Link>
-                        <Link to='/' className='mt-3'>Schools in Bayelsa</Link>
+                        <Link to='/' className='mt-3'>Schools Info</Link>
 
                         <Link to='/profile'>
                         <FaUserCircle className='mt-2 user-icon' />

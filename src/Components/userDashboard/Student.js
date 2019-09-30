@@ -52,6 +52,14 @@ Education is the premise of progess in every socitey in every family”</h1>
                                 <Form.Group>
                                     <Form.Control type='text' />
                                 </Form.Group>
+                                <Form.Label>Performance Review</Form.Label>
+                                <Form.Group>
+                                    <Form.Control as='textarea' rows='4' />
+                                </Form.Group>
+                                <Form.Label>Special Skills</Form.Label>
+                                <Form.Group>
+                                    <Form.Control type='text' />
+                                </Form.Group>
                             </Form>
                         </div>
                     </div>

@@ -13,10 +13,10 @@ const Routes = (props) => {
     <Router>
       <Header />
       <Switch>
-        <Route exact component={Admin} path="/admin" />
+        <Route exact component={Admin} path="/" />
         <Route exact component={registeredSchool} path="/schools" />
         <Route exact component={schoolData} path="/schools/data"/>
-        <Route exact component={dashboard} path="/" />
+        <Route exact component={dashboard} path="/dashboard" />
         <Route exact component={student} path='/student' />
         <Route exact component={Profile} path='/profile'/>
       </Switch>

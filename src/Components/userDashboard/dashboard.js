@@ -18,14 +18,14 @@ Education is the premise of progess in every socitey in every family”</h1>
                     <h2>Hi, Mr. Donald</h2>
                     <h5>What do you want to do today?</h5>
                 </div>
-                <div className='d-flex justify-content-between'>
+                <div className='d-flex flex-row'>
                     <Link to='/'><Card>
                         <Card.Body>
                             General Information
                         </Card.Body>
                     </Card></Link>
 
-                    <Link to='/student'><Card>
+                    <Link to='/student'><Card className='ml-5'>
                         <Card.Body>
                             Student details
                         </Card.Body>
