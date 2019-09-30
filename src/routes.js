@@ -14,17 +14,18 @@ import schoolData from './Components/adminDashboard/data'
 const Routes = (props) => {
   return (
     <Router>
-      <Header />
+     
       <Switch>
         <Route  exact component={SignIn} path="/signin"/>
         <Route  exact component={Register} path="/register"/>
-
+        <Header>
         <Route exact component={Admin} path="/admin" />
         <Route exact component={registeredSchool} path="/schools" />
         <Route exact component={schoolData} path="/schools/data"/>
         <Route exact component={dashboard} path="/" />
         <Route exact component={student} path='/student' />
         <Route exact component={Profile} path='/profile'/>
+        </Header>
       </Switch>
 
     </Router>

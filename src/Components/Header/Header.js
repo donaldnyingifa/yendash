@@ -25,7 +25,7 @@ class Header extends Component {
                         </Link>
                     </div>
                 </Container>
-
+            {this.props.children}
             </div>
         )
     }
