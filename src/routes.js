@@ -4,6 +4,7 @@ import SignIn from './Components/signin'
 import Admin from './Components/adminDashboard/Admin';
 import Header from './Components/Header/Header'
 import registeredSchool from './Components/adminDashboard/registeredSchool';
+import dashboard from './Components/userDashboard/dashboard'
 
 const Routes = (props) => {
   return (
@@ -13,6 +14,7 @@ const Routes = (props) => {
         <Route exact component={SignIn} path="/" />
         <Route exact component={Admin} path="/admin" />
         <Route exact component={registeredSchool} path="/schools" />
+        <Route exact component={dashboard} path="/dashboard"/>
       </Switch>
     </Router>
 

@@ -9,7 +9,7 @@ export class Admin extends Component {
     render() {
         return (
             <div>
-                <Container>
+                <Container className="admin-box">
                     <div className="quote text-center d-flex justify-content-center">
                         <div className="message text-center">
                             <h1>“Investment in Knowledge pays the best interest”</h1>
