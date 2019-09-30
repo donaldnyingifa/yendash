@@ -1,0 +1,51 @@
+.root {
+    margin: 0;
+    padding: 0;
+}
+.quote {
+    width: 195vh;
+    height: 300px;
+    left: 54px;
+    top: 109px;
+    background-image: url('./pikin.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding-top: 70px;
+    border-radius: 20px;
+}
+
+.message{
+    width: 528px;
+    border: 5px solid white;
+    height: 170px;
+    background: transparent;
+    padding-top: 20px;
+    color: white;
+}
+
+.admin-box {
+    padding: 0;
+    margin: 20px;
+}
+
+.schoolCard {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.image {
+    margin: 10px;
+    height: 90px;
+    background-color: cadetblue;
+}
+
+.snam {
+    border-left: 1px dashed grey;
+    padding-top: 20px;
+}
+
+.address {
+    border-left: 1px dashed grey;
+    padding-top: 30px;
+}
+
