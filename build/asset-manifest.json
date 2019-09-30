@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4093a838.chunk.css",
+    "main.js": "/static/js/main.74bd6525.chunk.js",
+    "main.js.map": "/static/js/main.74bd6525.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bfc875e5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bfc875e5.js.map",
+    "static/css/2.0624914a.chunk.css": "/static/css/2.0624914a.chunk.css",
+    "static/js/2.70f688a5.chunk.js": "/static/js/2.70f688a5.chunk.js",
+    "static/js/2.70f688a5.chunk.js.map": "/static/js/2.70f688a5.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.083274e1739731b431fb6c898989dee9.js": "/precache-manifest.083274e1739731b431fb6c898989dee9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.4093a838.chunk.css.map": "/static/css/main.4093a838.chunk.css.map",
+    "static/media/register.scss": "/static/media/people.741b17ff.png",
+    "static/media/admin.css": "/static/media/pikin.39755d3c.jpg"
+  }
+}
