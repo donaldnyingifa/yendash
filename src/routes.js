@@ -1,15 +1,17 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import SignIn from './Components/signin'
+import Admin from './Components/adminDashboard/Admin';
 
 const Routes = (props) => {
-  return(
+  return (
     <Router>
       <Switch>
-          <Route  exact component={SignIn} path="/"/>
-        </Switch>
+        <Route exact component={SignIn} path="/" />
+        <Route exact component={Admin} path="/admin" />
+      </Switch>
     </Router>
-       
+
   )
 }
 

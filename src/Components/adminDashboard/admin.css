@@ -1,0 +1,21 @@
+.quote {
+    width: 98vw;
+    height: 300px;
+    left: 54px;
+    top: 109px;
+    background-image: url('./pikin.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding-top: 70px;
+    border-radius: 20px;
+}
+
+.message{
+    width: 528px;
+    border: 5px solid white;
+    height: 170px;
+    background: transparent;
+    padding-top: 20px;
+    color: white;
+}
