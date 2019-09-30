@@ -3,7 +3,7 @@
     padding: 0;
 }
 .quote {
-    width: 98vw;
+    width: 195vh;
     height: 300px;
     left: 54px;
     top: 109px;
@@ -23,3 +23,30 @@
     padding-top: 20px;
     color: white;
 }
+
+.container {
+    padding: 0;
+    margin: 20px;
+}
+
+.schoolCard {
+    width: 155vh;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.image {
+    margin: 10px;
+    height: 90px;
+    background-color: cadetblue;
+}
+
+.snam {
+    border-left: 1px dashed grey;
+    padding-top: 20px;
+}
+
+.address {
+    border-left: 1px dashed grey;
+    padding-top: 30px;
+}
+

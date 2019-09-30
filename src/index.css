@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.form-input{
+  width: 550px;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+}
