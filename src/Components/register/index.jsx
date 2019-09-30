@@ -23,13 +23,16 @@ import './register.scss'
         handleSubmit = async event => {
             event.preventDefault();
     
-            const { email, password } = this.state;
+            const { email, password, name } = this.state;
     
             try {
                 auth.createUserWithEmailAndPassword(email, password).then(() => {
+                    const user = auth.currentUser;
+                    user.updateProfile({
+                        displayName: name
+                    });
                     window.location.href="/dashboard";
                 }).catch((e) => {
-                    console.log('error')
                     this.setState({ error: e.message});
                 });
 
