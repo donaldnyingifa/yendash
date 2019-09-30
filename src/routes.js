@@ -10,21 +10,24 @@ import dashboard from './Components/userDashboard/dashboard'
 import student from './Components/userDashboard/Student'
 import Profile from './Components/Profile/Profile'
 import schoolData from './Components/adminDashboard/data'
+import Home from './Components/Home';
 
 const Routes = (props) => {
   return (
     <Router>
-      <Header />
+     
       <Switch>
+        <Route exact component={Home} path="/" />
         <Route  exact component={SignIn} path="/signin"/>
         <Route  exact component={Register} path="/register"/>
-
+        <Header>
         <Route exact component={Admin} path="/admin" />
         <Route exact component={registeredSchool} path="/schools" />
         <Route exact component={schoolData} path="/schools/data"/>
-        <Route exact component={dashboard} path="/" />
+        <Route exact component={dashboard} path="/dashboard" />
         <Route exact component={student} path='/student' />
         <Route exact component={Profile} path='/profile'/>
+        </Header>
       </Switch>
 
     </Router>

@@ -2,10 +2,6 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase'
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import './register.scss'
 
   export default class Register extends React.Component {
@@ -68,7 +64,7 @@ import './register.scss'
                                 <TextField
                                     name="name"
                                     onChange={handleChange}
-                                    label="School Name"
+                                    label="Name"
                                     type="text"
                                     className="input"
                                     autoComplete="current-name"
@@ -76,45 +72,12 @@ import './register.scss'
                                     variant="outlined"
                                     />
                             </div>
-                            <div className="cd">
-                                <TextField
-                                    name="address"
-                                    onChange={handleChange}
-                                    label="School Address"
-                                    type="text"
-                                    className="input"
-                                    autoComplete="current-address"
-                                    margin="normal"
-                                    variant="outlined"
-                                    />
-                            </div>
-    
-                            <FormControl variant="outlined" style={{width: '430px', marginLeft: '22%'}} className="">
-                                <InputLabel  htmlFor="outlined-age-simple">
-                                School Type
-                                </InputLabel>
-                                <Select
-                                value={this.state.type}
-                                onChange={handleChange}
-                                inputProps={{
-                                    name: 'type',
-                                    id: 'outlined-age-simple',
-                                }}
-                                >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={"Public"}>Public</MenuItem>
-                                <MenuItem value={"Private"}>Private</MenuItem>
-                                </Select>
-                            </FormControl>
-                           
     
                             <div className="cd">
                                 <TextField
                                     name="email"
                                     onChange={handleChange}
-                                    label="School Email"
+                                    label="Email"
                                     type="email"
                                     className="input"
                                     autoComplete="current-email"
