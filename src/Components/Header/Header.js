@@ -20,7 +20,9 @@ class Header extends Component {
                         <Link to='/schools' className='mt-3'>Schools Registered</Link>
                         <Link to='/' className='mt-3'>Schools in Bayelsa</Link>
 
+                        <Link to='/profile'>
                         <FaUserCircle className='mt-2 user-icon' />
+                        </Link>
                     </div>
                 </Container>
 
