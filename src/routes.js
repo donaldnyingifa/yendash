@@ -6,6 +6,7 @@ import Header from './Components/Header/Header'
 import registeredSchool from './Components/adminDashboard/registeredSchool';
 import dashboard from './Components/userDashboard/dashboard'
 import student from './Components/userDashboard/Student'
+import Profile from './Components/Profile/Profile'
 
 const Routes = (props) => {
   return (
