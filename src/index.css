@@ -44,3 +44,9 @@ background: rgba(233, 214, 44, 0.4);
   font-size: 20px;
   color: white;
 }
+
+.user-profile{
+  width: 100px;
+  height: 100px;
+  border: 1px soild gray;
+}

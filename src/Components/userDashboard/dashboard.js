@@ -24,12 +24,7 @@ Education is the premise of progess in every socitey in every family”</h1>
                         </Card.Body>
                     </Card>
 
-                    <Card>
-                        <Card.Body>
-                           Teacher Details
-                        </Card.Body>
-                    </Card>
-
+                 
                     <Card>
                         <Card.Body>
                            Student details
