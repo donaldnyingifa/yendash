@@ -1,9 +1,32 @@
 import React, { Component } from 'react'
 import { Container, Card } from 'react-bootstrap';
 import General from './General';
-import { Link } from 'react-router-dom'
-import Student from './Student'
-class dashboard extends Component {
+import { Link } from 'react-router-dom';
+import Student from './Student';
+import { auth } from '../../firebase';
+
+export default class dashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+
+    }
+
+    componentDidMount () {
+        this.unsubscribe = auth.onAuthStateChanged((user)=> {
+            if (!user){
+                window.location.href="/signin";
+            }else{
+                this.setState({ email: user.email });
+            }
+        });
+    }
+
+    componentWillUnmount () {
+        this.unsubscribe();
+    }
     render() {
         return (
             <Container className='user-box'>
@@ -15,8 +38,7 @@ Education is the premise of progess in every socitey in every family”</h1>
 
                 </div>
                 <div className='d-flex flex-column mt-3'>
-                    <h2>Hi, Mr. Donald</h2>
-                    <h5>What do you want to do today?</h5>
+                    <h2>Hi {this.state.email}, </h2>
                 </div>
                 <div className='d-flex justify-content-between'>
                     <Link to='/'><Card>
@@ -39,5 +61,3 @@ Education is the premise of progess in every socitey in every family”</h1>
 
     }
 }
-
-export default dashboard;
