@@ -13,10 +13,8 @@ import './signin.scss'
         }
     }
     handleChange = (event) => {
-        const { name, value} = event.target
-        this.setState({[name] : value }, ()=> {
-            console.log(this.state)
-        })
+        const { name, value} = event.target;
+        this.setState({[name] : value });
     }
 
     handleSubmit = async event => {
@@ -27,10 +25,11 @@ import './signin.scss'
         try {
             await auth.signInWithEmailAndPassword(email, password);
             this.setState({email:'', password: ''});
+            window.location.href="/dashboard"
         } catch (error) {
-            console.log(error);
+            this.setState({ error: error.message})
         }
-        console.log('hi')
+       
     }
 
       render () {
@@ -63,7 +62,7 @@ import './signin.scss'
                                 variant="outlined"
                             />
                         </div>
-
+                        <p  className='text-danger'>{this.state.error}</p>
                         <div>
                         <div className="center">
                             <button onClick={this.handleSubmit} type="button" class="btn btn-primary">  Log In</button>

@@ -9,8 +9,6 @@ import './register.scss'
             super();
             this.state = {
                 name: '',
-                address: '',
-                type: '',
                 email: '',
                 password: ''
             }
@@ -18,35 +16,33 @@ import './register.scss'
 
         handleChange = (event) => {
             const { name, value} = event.target
-            this.setState({[name] : value }, ()=> {
-            // console.log(this.state)
-            })
+            this.setState({[name] : value });
             
         }
 
         handleSubmit = async event => {
             event.preventDefault();
     
-            const { email, password } = this.state;
-    
+            const { email, password, name } = this.state;
     
             try {
-                const { user } = await auth.createUserWithEmailAndPassword(
-                    email,
-                    password
-                );
-    
-                console.log(user)
-    
+                auth.createUserWithEmailAndPassword(email, password).then(() => {
+                    const user = auth.currentUser;
+                    user.updateProfile({
+                        displayName: name
+                    });
+                    window.location.href="/dashboard";
+                }).catch((e) => {
+                    this.setState({ error: e.message});
+                });
+
                 this.setState({
                     name: '',
-                    type: '',
                     email: '',
-                    password: '',
-                    address: ''
+                    password: ''
                 })
             } catch (error) {
-                console.error(error)
+                this.setState({ error: 'Error registering. Please try again'});
             }
         }
 
@@ -97,10 +93,10 @@ import './register.scss'
                                     variant="outlined"
                                 />
                             </div>
-    
+                            <p  className='text-danger'>{this.state.error}</p>
                             <div>
                             <div className="center">
-                                <button onClick={()=> console.log(this.state)} type="button" class="btn btn-primary">  Register </button>
+                                <button onClick={this.handleSubmit} type="button" class="btn btn-primary">  Register </button>
                             </div>
                             
                             </div>
