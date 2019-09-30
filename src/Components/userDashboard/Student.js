@@ -19,7 +19,7 @@ Education is the premise of progess in every socitey in every family”</h1>
                         <h5>What do you want to do today?</h5>
                     </div>
                     <div className='d-flex justify-content-between'>
-                        <Link to='/dashboard'><Card>
+                        <Link to='/'><Card>
                             <Card.Body>
                                 General Information
                         </Card.Body>
@@ -32,7 +32,7 @@ Education is the premise of progess in every socitey in every family”</h1>
                         </Card></Link>
                     </div>
                     <div className='d-flex flex-column'>
-                        <div className='mt-4'>
+                        <div className='mt-4 p-5'>
                             <Form>
                                 <Form.Label>Student Name</Form.Label>
                                 <Form.Group>
