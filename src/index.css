@@ -20,3 +20,27 @@ code {
   width: 40px;
   height: 40px;
 }
+
+.user-jumbo{
+  width: 170vh;
+    height: 250px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./Components/adminDashboard/pikin.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.user-text{
+  width: 528px;
+height: 100px;
+padding-top: 20px;
+margin-top: 5%; 
+
+background: rgba(233, 214, 44, 0.4);
+}
+
+.user-text h1{
+  font-size: 20px;
+  color: white;
+}

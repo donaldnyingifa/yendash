@@ -8,7 +8,7 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Container className='ml-5'>
+                <Container className="mt-3">
                     <div className='d-flex justify-content-around'>
                         <h1>Yendash</h1>
                         <Form className='mt-2 form-input' >
