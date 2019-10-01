@@ -8,40 +8,19 @@ class PieChart extends Component {
 			exportEnabled: true,
 			animationEnabled: true,
 			title: {
-				text: "SCHOOLS IN BAYELSA STATE"
+				text: this.props.title
 			},
 			data: [{
 				type: "pie",
 				startAngle: 75,
-				toolTipContent: "<b>{label}</b>: {y}%",
+				toolTipContent: "<b>{label}</b>: {y}",
 				showInLegend: "true",
 				legendText: "{label}",
 				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y}%",
+				indexLabel: "{label} - {y}",
 				dataPoints: [
-					{ y: 59, label: "REGISTERED SCHOOLS" },
-					{ y: 41, label: "UNREGISTERED SCHOOLS" }
-				]
-			}]
-		}
-
-		const options2 = {
-			exportEnabled: true,
-			animationEnabled: true,
-			title: {
-				text: "PRIVATE - PUBLIC RATIO"
-			},
-			data: [{
-				type: "pie",
-				startAngle: 75,
-				toolTipContent: "<b>{label}</b>: {y}%",
-				showInLegend: "true",
-				legendText: "{label}",
-				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y}%",
-				dataPoints: [
-					{ y: 59, label: "PRIVATE" },
-					{ y: 41, label: "PUBLIC" }
+					{ y: this.props.yValue, label: this.props.yLabel },
+					{ y: this.props.xValue, label: this.props.xLabel }
 				]
 			}]
 		}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './admin.css'
-import PieChart from '../views/pie & funnel charts/Pie Chart'
-import PieChart2 from '../views/pie & funnel charts/pie2'
+import PieChart from '../views/charts/pie1';
+import PieChart2 from '../views/charts/pie2'
 
 
 export class Admin extends Component {
