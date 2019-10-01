@@ -4,30 +4,14 @@
 .mem {
     width: 100%;
     height: 100vh;
-    left: 0px;
-    top: -41px;
     color: white;
     background-image: url('./landimage.jpg');
     background-size: cover;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     background-attachment: fixed;
+    background-position: center;
 }
 
 .info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 450px;
-    height: 300px;
-    font-style: bold;
-    margin: 60px;
-    padding: 10px;
-    font-family: 'Righteous', cursive;
-    font-size: 20px;
-
     background: rgba(0, 0, 0, 0.55);
     border-radius: 10px;
 }
@@ -49,11 +33,6 @@ font-family: 'Inconsolata', monospace;
     font-family: 'Anton', sans-serif;
     color: black;
 }
-.detail {
-    display: flex;
-    margin: 30px;
-    height: 400px;
-}
 
 .infoCard {
     padding: 30px;
@@ -63,17 +42,14 @@ font-family: 'Inconsolata', monospace;
 
 .contact {
     background-color: #00022D;
-    height: 500px;
+    height: 100vh;
 }
 
 .contact2 {
     background-color: #00022D;
-    padding: 20px;
     height: 500px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-flow: column;
+    height: 100vh;
 }
 .contact3 {
     background-color: white;
@@ -124,9 +100,11 @@ background-color: white;
 border-radius: 10px;
 }
 
-.aboutpic {
-    width: 420px;
+.about-image {
+    width: 320px;
     height: 269px;
-    background-image: url('./about.jpg');
-    background-size: cover;
+}
+
+.services{
+    color: white;
 }

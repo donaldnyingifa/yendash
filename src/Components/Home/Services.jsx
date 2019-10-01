@@ -1,37 +1,44 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Card, CardGroup, Container } from 'react-bootstrap'
 
 export default () => {
     return (
-        <div className='contact2'>
-            <h2 className='text-center servT'>Problem We Solve</h2>
-            <h5 className='text-center servT'>We offer credible and viable
-school statistics gotten from each individual school</h5>
-            <Row>
-                <Col>
-                    <div className="box2 text-center">
-                        <div className="text">
-                            <h2>We gather the data</h2>
-                            <h6> We gather all available
-                                data made ready by
-                            schools</h6>
-                        </div>
+        <div className='contact2 p-2'>
+            <div className='services'>
+            <h2 className='text-center mt-2'>Problem We Solve</h2>
+            <article className='text-center'>We offer credible and viable
+school statistics gotten from each individual school</article>
+</div>
 
-                    </div>
-                </Col>
-                <Col>
-                    <div className="box2 text-center">
-                        <div className="text">
-                            <h2>Save time and cost</h2>
-                            <h6>We help you save travel
-                                cost and manage time,
-                                so you will be able
-                            to work from anywhere</h6>
-                        </div>
-
-                    </div>
-                </Col>
-            </Row>
-        </div>
+            <Container className='d-flex justify-content-center pb-5'>
+                <Row className='p-4 d-flex align-content-center'>
+                    <CardGroup className='p-2'>
+                        <Col>
+                            <Card border='none' className='card-class mt-2'>
+                                <Card.Body>
+                                    <h2 className='text-center'>We gather the data</h2>
+                                    <article className='text-center'> We gather all available
+                                        data made ready by
+                            schools</article>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                        <Card className='card-class mt-2' border='none'>
+                            <Card.Body>
+                            <div className="text">
+                                <h2 className='text-center'>Save time and cost</h2>
+                                <article className='text-center'>We help you save travel
+                                    cost and manage time,
+                                    so you will be able
+                            to work from anywhere</article>
+                            </div>
+                            </Card.Body>
+                            </Card>
+                        </Col>
+                    </CardGroup>
+                </Row>
+            </Container>
+        </div >
     )
 }

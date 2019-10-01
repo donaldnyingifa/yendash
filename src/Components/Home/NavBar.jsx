@@ -6,12 +6,10 @@ export default () => {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-            <img src={logo} alt='brand-logo' className="logo"/>
+            <img src={logo} alt='brand-logo' className="logo ml-2"/>
                 <Navbar.Brand href="#home">
-                    <h4>SchoolPoint</h4></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                </Navbar.Collapse>
+                    <h4>SchoolPoint</h4>
+                    </Navbar.Brand>
             </Navbar>
         </div>
     )

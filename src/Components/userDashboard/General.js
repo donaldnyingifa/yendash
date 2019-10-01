@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import { database, storage } from '../../firebase';
 import FileReaderInput from 'react-file-reader-input';
@@ -7,7 +7,7 @@ import Select from '@material-ui/core/Select';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-class General extends Component{
+class General extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +22,7 @@ class General extends Component{
             female: '',
             cs_lab: '',
             sc_lab: '',
-            loading:false
+            loading: false
         }
     }
 
@@ -35,18 +35,18 @@ class General extends Component{
     handleCheck = (e) => {
         this.setState({
             [e.target.name]: e.target.checked
-        }, ()=> console.log(this.state));
-        
+        }, () => console.log(this.state));
+
     }
 
     handleUpload = (e, results) => {
         results.forEach(result => {
-          const [e] = result;
-          this.setState({
-            image: e.target.result
+            const [e] = result;
+            this.setState({
+                image: e.target.result
+            });
         });
-        });
-      }
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -62,12 +62,12 @@ class General extends Component{
                     this.saveInfo(url);
                 })
             });
-        }else{
+        } else {
             this.saveInfo();
         }
-        
+
     }
-    saveInfo (url='') {
+    saveInfo(url = '') {
         const { name, state, lga, community, students, teachers, fees, male,
             female, cs_lab, sc_lab } = this.state;
         const data = {
@@ -75,26 +75,26 @@ class General extends Component{
             state,
             lga,
             community,
-            students, 
-            teachers, 
-            fees, 
+            students,
+            teachers,
+            fees,
             male,
             female,
-            url, 
-            cs_lab, 
+            url,
+            cs_lab,
             sc_lab
         }
         database.ref().child('schools').push(data, (error) => {
-            if(!error) {
-                window.location.href="/schools";
-                this.setState({ loading:false });
+            if (!error) {
+                window.location.href = "/schools";
+                this.setState({ loading: false });
                 //Reset form
             }
         })
     }
-    render(){
+    render() {
         const { loading } = this.state;
-        return(
+        return (
             <div className='mt-4 p-5'>
                 <Form onSubmit={this.handleSubmit}>
                     <h3>General Info</h3>
@@ -105,49 +105,49 @@ class General extends Component{
 
                     <Form.Label>Image</Form.Label>
                     <Form.Group>
-                    <FileReaderInput name="image" as="url" id="my-file-input"
-                                    onChange={this.handleUpload}>
-                                    
-                    <div style={{ cursor: 'pointer', backgroundColor:'#eaeaea', padding:'5px' }}> Select a Image!</div>
-                    </FileReaderInput>
-                    {
-                        this.state.image ?
-                        <img src={this.state.image} style={{padding:'10px'}} width="300px" alt="schlimage" /> 
-                        : null
-                    }
+                        <FileReaderInput name="image" as="url" id="my-file-input"
+                            onChange={this.handleUpload}>
+
+                            <div style={{ cursor: 'pointer', backgroundColor: '#eaeaea', padding: '5px' }}> Select a Image!</div>
+                        </FileReaderInput>
+                        {
+                            this.state.image ?
+                                <img src={this.state.image} style={{ padding: '10px' }} width="300px" alt="schlimage" />
+                                : null
+                        }
                     </Form.Group>
 
                     <Form.Label>State</Form.Label>
                     <Form.Group>
-                        <FormControl variant="outlined" style={{width:"100%"}}>
-                            
+                        <FormControl variant="outlined" style={{ width: "100%" }}>
+
                             <Select
-                            native
-                            onChange={this.handleChange}
-                            name="state"
+                                native
+                                onChange={this.handleChange}
+                                name="state"
                             >
-                            <option value="" />
-                            <option value={'Bayelsa'}>Bayelsa</option>
-                            <option value={'Port Harcourt'}>Port Harcourt</option>
-                            <option value={'Abuja'}>Abuja</option>
-                            <option value={'Lagos'}>Lagos</option>
+                                <option value="" />
+                                <option value={'Bayelsa'}>Bayelsa</option>
+                                <option value={'Port Harcourt'}>Port Harcourt</option>
+                                <option value={'Abuja'}>Abuja</option>
+                                <option value={'Lagos'}>Lagos</option>
                             </Select>
                         </FormControl>
                     </Form.Group>
 
-                   <Form.Label>Local Government</Form.Label>
+                    <Form.Label>Local Government</Form.Label>
                     <Form.Group>
-                        <FormControl variant="outlined" style={{width:"100%"}}>
-                            
+                        <FormControl variant="outlined" style={{ width: "100%" }}>
+
                             <Select
-                            native
-                            onChange={this.handleChange}
-                            name="lga"
+                                native
+                                onChange={this.handleChange}
+                                name="lga"
                             >
-                            <option value="" />
-                            <option value={'Brass'}>Brass</option>
-                            <option value={'Yenagoa'}>Yenagoa</option>
-                            <option value={'Sagbama'}>Sagbama</option>
+                                <option value="" />
+                                <option value={'Brass'}>Brass</option>
+                                <option value={'Yenagoa'}>Yenagoa</option>
+                                <option value={'Sagbama'}>Sagbama</option>
                             </Select>
                         </FormControl>
                     </Form.Group>
@@ -185,18 +185,39 @@ class General extends Component{
 
                     <FormControlLabel
                         control={
-                        <Checkbox name="sc_lab" onChange={this.handleCheck} />
+                            <Checkbox name="sc_lab" onChange={this.handleCheck} />
                         }
                         label="Science Lab"
                     />
 
                     <FormControlLabel
                         control={
-                        <Checkbox name="cs_lab" onChange={this.handleCheck}  />
+                            <Checkbox name="cs_lab" onChange={this.handleCheck} />
                         }
                         label="Computer Lab"
                     />
-                    
+
+                    <FormControlLabel
+                        control={
+                            <Checkbox name="private" onChange={this.handleCheck} />
+                        }
+                        label="Private School"
+                    />
+
+                    <FormControlLabel
+                        control={
+                            <Checkbox name="public" onChange={this.handleCheck} />
+                        }
+                        label="Public School"
+                    />
+
+                    <FormControlLabel
+                        control={
+                            <Checkbox name="fund" onChange={this.handleCheck} />
+                        }
+                        label="Funding"
+                    />
+
                     <div className='d-flex justify-content-end'>
                         {loading ? <p>Saving...</p> : <Button type="submit">Submit</Button>}
                     </div>
