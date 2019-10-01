@@ -7,7 +7,8 @@ export default class SchoolData extends Component{
     constructor(props){
         super(props);
             this.state ={
-                school:{}
+                school:{},
+                loading:true
         }
         this.ref = database.ref().child('schools');
     }
@@ -20,12 +21,12 @@ export default class SchoolData extends Component{
         const id = this.props.match.params.id;
         this.ref.child(id).once('value', snapshot => {
             if (snapshot.exists) {
-                this.setState({ school:snapshot.val() });
+                this.setState({ school:snapshot.val(), loading:false });
             }
         });
     }
     render(){
-        const { school } = this.state;
+        const { school, loading } = this.state;
         return(
             <div>
                 <Container>
@@ -33,14 +34,13 @@ export default class SchoolData extends Component{
                     <h1>{school.name}</h1>
                     <h5> {school.state}, {school.lga}, { school.community} </h5>
                     </div>
-                    <div className='d-flex justify-content-center'>
+                    {!loading && <div className='d-flex justify-content-center'>
                    
-                        <Col><PieChart xValue={school.male} yValue={school.female} xLabel={'Male'} yLabel={'Female'} title="Gender Distribution" /></Col>
-                  
+                     <Col><PieChart xValue={school.male} yValue={school.female} xLabel={'Male'} yLabel={'Female'} title="Gender Distribution" /></Col>
+                     <Col style={{ width: 1200, padding: 10 }}><PieChart xValue={school.students} yValue={school.teachers} xLabel={'Students'} yLabel={'Teachers'} title="Teacher/Student Ratio" /></Col>
+            
+                 </div>}
                     
-                        <Col style={{ width: 1200, padding: 10 }}><PieChart xValue={school.students} yValue={school.teachers} xLabel={'Students'} yLabel={'Teachers'} title="Teacher/Student Ratio" /></Col>
-                 
-                    </div>
                 </Container>
 
             </div>
