@@ -9,7 +9,7 @@ import registeredSchool from './Components/adminDashboard/registeredSchool';
 import dashboard from './Components/userDashboard/dashboard'
 import student from './Components/userDashboard/Student'
 import Profile from './Components/Profile/Profile'
-import schoolData from './Components/adminDashboard/data'
+import SchoolData from './Components/adminDashboard/data'
 import Home from './Components/Home';
 
 const Routes = (props) => {
@@ -23,7 +23,7 @@ const Routes = (props) => {
         <Header>
         <Route exact component={dashboard} path="/new/schools" />
         <Route exact component={registeredSchool} path="/schools" />
-        <Route exact component={schoolData} path="/schools/data"/>
+        <Route exact component={SchoolData} path="/schools/:id"/>
         <Route exact component={Admin} path="/dashboard" />
         <Route exact component={student} path='/student' />
         <Route exact component={Profile} path='/profile'/>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import { Link } from 'react-router-dom'
 import logo from './school.png'
+import { Link } from 'react-router-dom'
 import { auth } from '../../firebase'
 
 class Header extends Component {
@@ -30,7 +30,7 @@ class Header extends Component {
                 <Container className="mt-3">
                     <div className='d-flex justify-content-around'>
                         <div className='d-flex flex-row'>
-                            <img src={logo} alt='logo' className='logo'/>
+                            <img src={logo} className='logo' alt='logo'/>
                         <Link to="/dashboard" className='link'>
                              <h1>SchoolPoint</h1>
                         </Link>

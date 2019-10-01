@@ -1,17 +1,45 @@
 import React, {Component} from 'react'
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { database } from '../../firebase';
+import PieChart from '../views/charts/pie1'
 
-class schoolData extends Component{
+export default class SchoolData extends Component{
+    constructor(props){
+        super(props);
+            this.state ={
+                school:{}
+        }
+        this.ref = database.ref().child('schools');
+    }
+
+    componentDidMount () {
+        this.getSchoolInfo();
+    }
+
+    getSchoolInfo () {
+        const id = this.props.match.params.id;
+        this.ref.child(id).once('value', snapshot => {
+            if (snapshot.exists) {
+                this.setState({ school:snapshot.val() });
+            }
+        });
+    }
     render(){
+        const { school } = this.state;
         return(
             <div>
                 <Container>
-                    <div className='d-flex justify-content-between'>
-                    <h1>School Name</h1>
-                    <h4>School Address</h4>
+                    <div className='text-center justify-content-center'>
+                    <h1>{school.name}</h1>
+                    <h5> {school.state}, {school.lga}, { school.community} </h5>
                     </div>
                     <div className='d-flex justify-content-center'>
-                        pieChart
+                   
+                        <Col><PieChart xValue={school.male} yValue={school.female} xLabel={'Male'} yLabel={'Female'} title="Gender Distribution" /></Col>
+                  
+                    
+                        <Col style={{ width: 1200, padding: 10 }}><PieChart xValue={school.students} yValue={school.teachers} xLabel={'Students'} yLabel={'Teachers'} title="Teacher/Student Ratio" /></Col>
+                 
                     </div>
                 </Container>
 
@@ -19,5 +47,3 @@ class schoolData extends Component{
         )
     }
 }
-
-export default schoolData;
