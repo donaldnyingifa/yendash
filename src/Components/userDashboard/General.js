@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Form, Button } from 'react-bootstrap';
-import { database } from '../../firebase';
+import { database, storage } from '../../firebase';
 import FileReaderInput from 'react-file-reader-input';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -44,24 +44,45 @@ class General extends Component{
           this.setState({
             image: e.target.result
         });
-          console.log(this.state);
         });
       }
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const { image } = this.state;
+
+        if (image) {
+            const sessionId = new Date().getTime()
+            storage.ref().child('images/' + sessionId).putString(image, 'data_url').then((snapshot) => {
+                snapshot.ref.getDownloadURL().then(url => {
+                    this.saveInfo(url);
+                })
+            });
+        }else{
+            this.saveInfo();
+        }
+        
+    }
+    saveInfo (url='') {
         const { name, state, lga, community, students, teachers, fees, male,
-        female, cs_lab, sc_lab } = this.state;
+            female, cs_lab, sc_lab } = this.state;
         const data = {
             name,
             state,
             lga,
-            community,students, teachers, fees, male,
-            female, cs_lab, sc_lab
+            community,
+            students, 
+            teachers, 
+            fees, 
+            male,
+            female,
+            url, 
+            cs_lab, 
+            sc_lab
         }
         database.ref().child('schools').push(data, (error) => {
             if(!error) {
-                alert('Done');
+                window.location.href="/schools"
                 //Reset form
             }
         })
