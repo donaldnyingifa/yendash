@@ -21,7 +21,8 @@ class General extends Component{
             male: '',
             female: '',
             cs_lab: '',
-            sc_lab: ''
+            sc_lab: '',
+            loading:false
         }
     }
 
@@ -49,6 +50,9 @@ class General extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
+
+        this.setState({ loading: true });
+
         const { image } = this.state;
 
         if (image) {
@@ -82,12 +86,14 @@ class General extends Component{
         }
         database.ref().child('schools').push(data, (error) => {
             if(!error) {
-                window.location.href="/schools"
+                window.location.href="/schools";
+                this.setState({ loading:false });
                 //Reset form
             }
         })
     }
     render(){
+        const { loading } = this.state;
         return(
             <div className='mt-4 p-5'>
                 <Form onSubmit={this.handleSubmit}>
@@ -192,7 +198,7 @@ class General extends Component{
                     />
                     
                     <div className='d-flex justify-content-end'>
-                        <Button type="submit">Submit</Button>
+                        {loading ? <p>Saving...</p> : <Button type="submit">Submit</Button>}
                     </div>
                 </Form>
             </div>
