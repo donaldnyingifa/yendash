@@ -47,9 +47,9 @@ font-family: 'Inconsolata', monospace;
 
 .contact2 {
     background-color: #00022D;
-    height: 500px;
-    justify-content: center;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
 }
 .contact3 {
     background-color: white;
@@ -107,4 +107,12 @@ border-radius: 10px;
 
 .services{
     color: white;
+}
+
+.card-class{
+    height: 50vh;
+}
+
+.featured-image{
+    width: 40vw;
 }

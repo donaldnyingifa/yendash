@@ -7,6 +7,7 @@ import ContactUs from './ContactUs'
 import './home.scss'
 import Partner from './Partner'
 import Footer from '../footer/Footer'
+import Feature from './featured'
 
 export default class Home extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ export default class Home extends Component {
                 <InfoCards />
                 <Services />
                 <Partner />
+                <Feature/>
                 <ContactUs />
                 <Footer />
             </div>

@@ -26,7 +26,7 @@ export default () => {
                     </Form>
                 </Col>
                 <Col>
-                    <Card className="text-center mb-5">
+                    <Card className="text-center mt-3 mb-5">
                         <Card.Body>
                         <article>"The problems are solved,
                         not by giving new information,
