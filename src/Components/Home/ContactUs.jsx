@@ -3,7 +3,10 @@ import { Row, Col, Form, Button } from 'react-bootstrap'
 
 export default () => {
     return (
-        <div className='contact'>
+        <div className='contact p-5'>
+            <div className='ml-4'>
+            <h2 className='text-white'>Contact Us</h2>
+            </div>
             <Row>
                 <Col>
                     <Form className='formi'>
