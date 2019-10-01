@@ -83,6 +83,11 @@ class General extends Component{
                                     
                     <div style={{ cursor: 'pointer', backgroundColor:'#eaeaea', padding:'5px' }}> Select a Image!</div>
                     </FileReaderInput>
+                    {
+                        this.state.image ?
+                        <img src={this.state.image} style={{padding:'10px'}} width="300px" alt="schlimage" /> 
+                        : null
+                    }
                     </Form.Group>
 
                     <Form.Label>State</Form.Label>
