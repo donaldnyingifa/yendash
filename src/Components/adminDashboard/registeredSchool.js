@@ -23,7 +23,7 @@ export default class RegisterdSchools extends Component {
             let schools = [];
             if (snapshots.exists) {
                 snapshots.forEach((school) => {
-                    schools.push({...school.val(), key: school.key});
+                    schools.unshift({...school.val(), key: school.key});
                     this.setState({ loading:false, schools });
                     console.log(school.val())
                 });
