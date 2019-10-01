@@ -1,9 +1,9 @@
 import React from 'react'
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form, Button, Card } from 'react-bootstrap'
 
 export default () => {
     return (
-        <div className='contact p-5'>
+        <div className='contact p-5 pb-5'>
             <div className='ml-4'>
             <h2 className='text-white'>Contact Us</h2>
             </div>
@@ -26,14 +26,16 @@ export default () => {
                     </Form>
                 </Col>
                 <Col>
-                    <div className="box text-center">
-                        <h5>The problems are solved,
+                    <Card className="text-center mt-3 mb-5">
+                        <Card.Body>
+                        <article>"The problems are solved,
                         not by giving new information,
                         but by arranging what we have known
-                        since long.</h5>
+                        since long."</article>
                         <h6> Ludwig Wittgenstein,
                             Philosophical Investigations.</h6>
-                    </div>
+                            </Card.Body>
+                    </Card>
                 </Col>
             </Row>
         </div>

@@ -1,14 +1,17 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import image from './about.jpg'
 
 export default () => {
     return (
-        <div className='detail'>
-            <Container className='text-center mt-5'>
+        <div>
+            <Container className='mt-5 pb-5'>
                 <Row>
-                    <Col md={4}><div className="aboutpic text-center">
+                    <Col>
+                    <div className='d-flex flex-wrap'>
+                    <img src={image} alt='about' className='about-image'/>
                     </div></Col>
-                    <Col md={8}><div className="infoCard text-center">
+                    <Col><div className="infoCard text-center">
                         <h2 className='tilt'>About</h2>
                         <div className="text-center">
                             <p>We are a data mining company,
