@@ -7,7 +7,7 @@ export default () => {
             <div className='mem' fluid>
                 <div className="info">
                     <div className="text">
-                        <h1 className='title'>yendash</h1>
+                        <h1 className='title'>SchoolPoint</h1>
                         <p>We are a data mining Partners for Schools </p>
                         <Button variant="outline-info">Partner with Us</Button>
                     </div>
