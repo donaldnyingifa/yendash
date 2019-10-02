@@ -4,7 +4,7 @@ import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
 const config = {
-    apiKey: "AIzaSyBJiXLtkBDSmpX7NynwIVHsZVMm5YdOgQE",
+    apiKey: "",
     authDomain: "yendash-c37c3.firebaseapp.com",
     databaseURL: "https://yendash-c37c3.firebaseio.com",
     projectId: "yendash-c37c3",
